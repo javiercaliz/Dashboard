@@ -34,7 +34,6 @@ sap.ui.define([
 			var oParameters = oEvent.getParameter("arguments");
 			var sEdad = oParameters.edad; // Aquí obtienes el valor del parámetro "id"
 			// Realiza las operaciones necesarias con el parámetro recibido
-			console.log(oParameters);
 		  },
 
 		onToView2 : function () {
