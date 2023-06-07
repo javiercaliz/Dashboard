@@ -1,0 +1,67 @@
+<mvc:View
+	controllerName="sap.f.Dashboard.controller.EnglishLevelController"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.f"
+	xmlns:card="sap.f.cards"
+	xmlns:core="sap.ui.core"
+	displayBlock="true"
+	height="100%"
+	width="18vw">
+	
+
+	<f:Card class="sapUiSmallMargin" >
+		<f:header>
+			<card:Header title="Nivel de Inglés" />
+		</f:header>
+		<f:content>
+			<List showSeparators="None" >
+	
+				<CustomListItem>
+						<HBox class="sapUiSmallMarginBegin sapUiTinyMarginTopBottom" >
+							<Text text="{nivelesIngles>/nivelA1}" class="englishLevelQuantity eq1"/>
+							<Text text="A1"  class="englishLevelIndicator"/>
+						</HBox>
+				</CustomListItem>
+				<CustomListItem>
+						<HBox class="sapUiSmallMarginBegin sapUiTinyMarginTopBottom" >
+							<Text text="{nivelesIngles>/nivelA2}" class=" englishLevelQuantity eq2"/>
+							<Text text="A2"  class="englishLevelIndicator"/> 
+						</HBox>
+				</CustomListItem>
+				<CustomListItem>
+						<HBox class="sapUiSmallMarginBegin sapUiTinyMarginTopBottom" >
+							<Text text="{nivelesIngles>/nivelB1}" class=" englishLevelQuantity eq3"/>
+							<Text text="B1"  class="englishLevelIndicator"/>
+						</HBox>
+				</CustomListItem>
+				<CustomListItem>
+						<HBox class="sapUiSmallMarginBegin sapUiTinyMarginTopBottom" >
+							<Text text="{nivelesIngles>/nivelB2}" class=" englishLevelQuantity eq4"/>
+							<Text text="B2"  class="englishLevelIndicator"/>
+						</HBox>
+				</CustomListItem>
+				<CustomListItem>
+						<HBox class="sapUiSmallMarginBegin sapUiTinyMarginTopBottom" >
+							<Text text="{nivelesIngles>/nivelC1}" class=" englishLevelQuantity eq5"/>
+							<Text text="C1"  class="englishLevelIndicator"/>
+						</HBox>
+				</CustomListItem>
+				<CustomListItem>
+						<HBox class="sapUiSmallMarginBegin sapUiTinyMarginTopBottom" >
+							<Text text="{nivelesIngles>/nivelC2}" class=" englishLevelQuantity eq6"/>
+							<Text text="C2"  class="englishLevelIndicator"/>
+						</HBox>
+				</CustomListItem>
+				<CustomListItem>
+						<HBox class="sapUiSmallMarginBegin sapUiTinyMarginTopBottom" >
+							<Text text="{nivelesIngles>/nivelSinInfo}" class=" englishLevelQuantity eq7"/>
+							<Text text="Sin Info"  class="englishLevelIndicator"/>
+						</HBox>
+				</CustomListItem>
+
+
+			</List>
+		</f:content>
+	</f:Card>
+</mvc:View>

@@ -1,0 +1,329 @@
+
+.sapFCard{
+    border-radius: 30px;
+}
+
+.sapFCard .sapFCardContent  {
+    margin-top: -4vh;
+}
+
+.apexcharts-legend-text{
+    font-size: 12px !important;
+}
+
+.apexcharts-legend-series {
+    margin: 0 !important;
+}
+
+#__card1, #__card2, #__card3, #__card4 {
+    align-items: center;
+    width: 25vw !important; 
+    height: 41vh !important;
+}
+
+#__card1 >.sapFCardContent, #__card2 >.sapFCardContent, #__card3 >.sapFCardContent {
+    margin-left: -3vw;
+}
+
+#__card0 {
+    height: 88vh;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#__card5 {
+    height: 88vh;
+    align-items: center;
+}
+
+
+#__hbox0, #__hbox1 {
+ 
+    align-items: center;
+    justify-content: flex-start;
+}
+#__hbox3, #__hbox4 {
+
+    margin: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    align-content: center;
+}
+
+
+
+#__page0-cont{
+    text-align: center;
+}
+
+
+.apexcharts-legend{
+    text-align: initial !important;
+}
+
+.luzRoja{
+    background-color: #e52e24;
+    border-radius: 50%;
+    width: 4vw;
+    height: 4vw;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 1vw;
+}
+
+.luzAmarilla{
+    background-color: #fade09;
+    border-radius: 50%;
+    width: 4vw;
+    height: 4vw;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 1vw;
+}
+
+.luzVerde{
+    background-color: #afd138;
+    border-radius: 50%;
+    width: 4vw;
+    height: 4vw;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 1vw;
+}
+
+.luzAzul{
+    background-color: #48a2d0;
+    border-radius: 50%;
+    width: 4vw;
+    height: 4vw;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 1vw;
+}
+
+.luzGris{
+    background-color: #b4b5b5;
+    border-radius: 50%;
+    width: 4vw;
+    height: 4vw;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 1vw;
+}
+
+#myTrafficLight{
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+}
+
+#__list0{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#__list1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+#__list2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.luzSemaforo{
+    color: white;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.englishLevelIndicator{
+    background-color: #ffffff;
+    color: #56a2a6;
+    font-size: 100%;
+    font-weight: bold;
+    height: 5vh;
+    width: 7vw !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3vh;
+
+}
+.englishLevelQuantity{
+    position: relative;
+    color: #ffffff;
+    font-size: x-large;
+    font-weight: bold;
+    height: 5vh;
+    width: 4vw !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.eq1{
+    background-color: #8bd4e2 !important; z-index: 7 !important;
+}
+
+.eq1::after {
+    content: "";
+    position: absolute;
+    bottom: -66%;
+    border-left: 2vw solid transparent;
+    border-right: 2vw solid transparent;
+    border-top: 3.5vh solid #8bd4e2;
+  }
+
+.eq2{
+    background-color: #6bcbd9 !important; z-index: 6 !important;
+}
+
+.eq2::after {
+    content: "";
+    position: absolute;
+    bottom: -66%;
+    border-left: 2vw solid transparent;
+    border-right: 2vw solid transparent;
+    border-top: 3.5vh solid #6bcbd9;
+  }
+
+.eq3{
+    background-color: #8bd4e2 !important; z-index: 5 !important;
+}
+
+.eq3::after {
+    content: "";
+    position: absolute;
+    bottom: -66%;
+    border-left: 2vw solid transparent;
+    border-right: 2vw solid transparent;
+    border-top: 3.5vh solid #8bd4e2;
+  }
+
+.eq4{
+    background-color: #56a3a6 !important; z-index: 4 !important;
+}
+
+.eq4::after {
+    content: "";
+    position: absolute;
+    bottom: -66%;
+    border-left: 2vw solid transparent;
+    border-right: 2vw solid transparent;
+    border-top: 3.5vh solid #56a3a6;
+  }
+
+.eq5{
+    background-color: #288386 !important; z-index: 3 !important;
+}
+
+.eq5::after {
+    content: "";
+    position: absolute;
+    bottom: -66%;
+    border-left: 2vw solid transparent;
+    border-right: 2vw solid transparent;
+    border-top: 3.5vh solid #288386;
+  }
+
+.eq6{
+    background-color: #1f7378 !important; z-index: 2 !important;
+}
+
+.eq6::after {
+    content: "";
+    position: absolute;
+    bottom: -66%;
+    border-left: 2vw solid transparent;
+    border-right: 2vw solid transparent;
+    border-top: 3.5vh solid #1f7378;
+  }
+
+.eq7{
+    background-color: #19484c !important; z-index: 1 !important;
+}
+
+.eq7::after {
+    content: "";
+    position: absolute;
+    bottom: -66%;
+    border-left: 2vw solid transparent;
+    border-right: 2vw solid transparent;
+    border-top: 3.5vh solid #19484c;
+  }
+
+
+.sapFCard, .sapFCardHeader {
+    background-color: #e5e5e5 !important;
+}
+
+.sapMList, .sapMListItems, .sapMListUl, .sapMLIB  {
+    background-color: transparent !important;
+}
+
+.departmentName{
+    background-color: #3d86c4;
+    color: white;
+    text-transform: uppercase;
+    width: 10vw;
+    height: 8vh;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 90%;
+}
+
+#__button0-inner{
+    height: 3vh !important;
+    width: 9vw !important;
+    border-radius: 10px !important;
+    margin-bottom: 80px !important;
+    margin-right: 0px !important;
+    margin-left: 50% !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+
+html.sap-desktop .sapMShellAppWidthLimited .sapMShellCentralBox {
+    width: 100%;
+    margin-left:0; 
+    left: 0; 
+    background-color: rgb(255, 255, 255);
+}
+
+.sapMBarTitleAlignAuto .sapMBarPH {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-weight: bold !important;
+}

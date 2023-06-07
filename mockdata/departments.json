@@ -1,0 +1,13 @@
+{
+	"departments": [
+		{
+			"name": "Escuela"
+		},
+		{
+			"name": "Departamento"
+		},
+		{
+			"name": "Profesores"
+		}
+	]
+}

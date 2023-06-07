@@ -1,0 +1,52 @@
+<mvc:View
+    controllerName="sap.f.Dashboard.controller.Master"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    displayBlock="true"
+    height="100%"
+    width="100%"
+>
+    <Page showHeader="true" title="Plan de Composición de la Facultad " >
+        <content>
+            <l:HorizontalLayout>
+                <VBox
+                    id="departmentContainer"
+                    class="sapUiMediumMarginEnd "
+                >
+                    <!-- Otros controles y contenido aquí -->
+                </VBox>
+                <VBox>
+                    <HBox>
+                        <VBox
+                            id="ageContainer"
+                            
+                        />
+                        <VBox id="commitmentContainer" />
+                    </HBox>
+                    <HBox>
+                        <VBox
+                            id="postgraduateContainer"
+                            
+                        />
+                        <VBox
+                            id="trafficLightContainer"
+                            
+                        />
+                    </HBox>
+                    <!-- Otros controles y contenido aquí -->
+                </VBox>
+                <VBox  />
+
+                <VBox
+                    id="englishLevelContainer"
+                    
+                >
+                    <!-- Otros controles y contenido aquí -->
+                </VBox>
+            </l:HorizontalLayout>
+        </content>
+    </Page>
+</mvc:View>

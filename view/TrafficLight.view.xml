@@ -1,0 +1,36 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    controllerName="sap.f.Dashboard.controller.TrafficLightController"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core"
+    xmlns:card="sap.f.cards"
+
+>
+    <f:Card class="sapUiSmallMarginBegin">
+        <f:header>
+            <card:Header title="Semáforo" />
+        </f:header>
+        <f:content>
+            <List showSeparators="None" >
+	
+
+				<CustomListItem>            
+						<HBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
+							<Text text="{semaforo>/rojo}" class="sapUiSmallMargin luzSemaforo luzRoja" id="luzRojo"/>
+							<Text text="{semaforo>/amarillo}" class="sapUiSmallMargin luzSemaforo luzAmarilla" id="luzAmarillo"/>
+							<Text text="{semaforo>/verde}" class="sapUiSmallMargin luzSemaforo luzVerde" id="luzVerde"/>
+						</HBox>
+				</CustomListItem>
+				<CustomListItem>
+						<HBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
+							<Text text="{semaforo>/azul}" class="sapUiSmallMargin luzSemaforo luzAzul" id="luzAzul"/>
+							<Text text="{semaforo>/gris}" class="sapUiSmallMargin luzSemaforo luzGris" id="luzGris"/>
+						</HBox>
+				</CustomListItem>		
+
+
+			</List>
+        </f:content>
+    </f:Card>
+</mvc:View>

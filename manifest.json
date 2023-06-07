@@ -1,0 +1,97 @@
+{
+	"sap.app": {
+		"id": "sap.f.Dashboard",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "sap.f.Dashboard.view.App",
+			"type": "XML",
+			"async": true
+		},
+		"dependencies": {
+			"libs": {
+				"sap.ui.core": {},
+				"sap.f": {},
+				"sap.m": {}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"type": "View",
+				"viewType": "XML",
+				"path": "sap.f.Dashboard.view",
+				"controlId": "Dashboard",
+				"controlAggregation": "pages",
+				"transition": "slide",
+				"async": true
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "MasterView",
+					"target": "MasterView"
+				},
+				{
+					"pattern": "Professors",
+					"name": "Professors",
+					"target": "Professors"
+				}
+			],
+			"targets": {
+				"MasterView": {
+					"id": "MasterView",
+					"path": "sap.f.Dashboard.view",
+					"name": "MasterView",
+					"level": 1
+				},
+				"Professors": {
+					"id": "Professors",
+					"path": "sap.f.Dashboard.view",
+					"name": "Professors",
+					"level": 2
+				}
+			}
+		},
+		"config": {
+			"files": [
+				"App.view.xml",
+				"Professors.view.xml",
+				"EnglishLevel.view.xml",
+				"Department.view.xml",
+				"Age.view.xml",
+				"Commitment.view.xml",
+				"PostGraduate.view.xml",
+				"TrafficLight.view.xml",
+				"controller.AppController.controller.js",
+				"controller.CommitmentController.controller.js",
+				"controller.PostGraduateController.controller.js",
+				"controller.EnglishLevelController.controller.js",
+				"controller.AgeController.controller.js",
+				"controller.DepartmentController.controller.js",
+				"controller.Master.controller.js",
+				"controller.ProfessorsController.controller.js",
+				"controller.BaseController.js",
+				"manifest.json",
+				"mockdata/departments.json",
+				"mockdata/profesors.json"
+			]
+		},
+		"models": {
+			"profesors": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "mockdata/profesors.json"
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,18 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    controllerName="sap.f.Dashboard.controller.PostGraduateController"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core"
+    xmlns:card="sap.f.cards"
+
+>
+    <f:Card class="sapUiSmallMargin sapUiCard">
+        <f:header>
+            <card:Header title="Posgrados" />
+        </f:header>
+        <f:content>
+            <core:HTML content='&lt;div id="myPostGraduate" &gt;&lt;/div&gt;' />
+        </f:content>
+    </f:Card>
+</mvc:View>
