@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="1.0">
+  <edmx:DataServices>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="sap.f.Dashboard">
+      <EntityType Name="Profesor">
+        <Key>
+          <PropertyRef Name="nombre"/>
+        </Key>
+        <Property Name="nombre" Type="Edm.String"/>
+        <Property Name="apellido" Type="Edm.String"/>
+        <Property Name="edad" Type="Edm.Int32"/>
+        <Property Name="compromiso_desempeno" Type="Edm.Int32"/>
+        <Property Name="posgrados" Type="Edm.Int32"/>
+        <Property Name="semaforo" Type="Edm.String"/>
+        <Property Name="nivel_ingles" Type="Edm.String"/>
+      </EntityType>
+      <EntityContainer Name="ProfesContainer" >
+        <EntitySet Name="Profesors" EntityType="sap.f.Dashboard.Profesor" />
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

@@ -1,8 +1,10 @@
 sap.ui.define([
 	"sap/m/MessageToast",
 	"sap/ui/core/mvc/Controller",
-	"sap/ui/model/json/JSONModel"
-], function (MessageToast, Controller, JSONModel) {
+	"sap/ui/model/json/JSONModel",
+    "sap/ui/model/Sorter",
+	"sap/ui/model/Filter"
+], function (MessageToast, Controller, JSONModel, Sorter, Filter) {
 	"use strict";
 
 	return Controller.extend("sap.f.Dashboard.controller.ProfessorsController", {
@@ -12,7 +14,18 @@ sap.ui.define([
 			var oRouter = this.getOwnerComponent().getRouter();
 			oRouter.getRoute("Professors").attachMatched(this._onRouteMatched, this);
 			
+			this.createTable();
+		},
+
+		onAfterRendering: async function () {
+			this.filtros();
+			
+		},
+
+
+		createTable: async function(){
 			var oTable = this.getView().byId("professorsTable");
+			var oSorter = new Sorter("profesors>nombre", false);
 			var oTemplate = new sap.m.ColumnListItem({
 				cells: [
 					new sap.m.Text({text: "{profesors>nombre}"}),
@@ -24,10 +37,59 @@ sap.ui.define([
 					new sap.m.Text({text: "{profesors>nivel_ingles}"})
 				]
 			});
+
 			oTable.bindItems({
 				path: "profesors>/profesors",
-				template: oTemplate
+				template: oTemplate,
+				sorter: oSorter,
 			});
+			
+		},
+
+		filtros: function(){ 
+			var oTable = this.getView().byId("professorsTable");
+			//obten en una variable la url actual
+			var url = window.location.href;
+
+			if (url.includes("age=%3E55")) { 
+				for (var i = 0; i < oTable.getItems().length; i++) {
+					if (oTable.getItems()[i].getCells()[2].getText() < 55) {
+						oTable.getItems()[i].setVisible(false);
+					}
+				}
+			};
+
+			if (url.includes("46-55") ) { 
+				for (var i = 0; i < oTable.getItems().length; i++) {
+					if (oTable.getItems()[i].getCells()[2].getText() > 55 || oTable.getItems()[i].getCells()[2].getText() < 46) {
+						oTable.getItems()[i].setVisible(false);
+					}
+				}
+			};
+			if (url.includes("36-45") ) { 
+				for (var i = 0; i < oTable.getItems().length; i++) {
+					if (oTable.getItems()[i].getCells()[2].getText() > 45 || oTable.getItems()[i].getCells()[2].getText() < 36) {
+						oTable.getItems()[i].setVisible(false);
+					}
+				}
+			};
+			if (url.includes("25-35") ) { 
+				for (var i = 0; i < oTable.getItems().length; i++) {
+					if (oTable.getItems()[i].getCells()[2].getText() > 35 || oTable.getItems()[i].getCells()[2].getText() < 25) {
+						oTable.getItems()[i].setVisible(false);
+					}
+				}
+			};
+			if (url.includes("age=%3C25") ) { 
+				for (var i = 0; i < oTable.getItems().length; i++) {
+					if (oTable.getItems()[i].getCells()[2].getText() > 25) {
+						oTable.getItems()[i].setVisible(false);
+					}
+				}
+			};
+				
+			
+
 		},
 
 		_onRouteMatched: function(oEvent) {

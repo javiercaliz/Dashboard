@@ -15,7 +15,7 @@
 
 		<!-- use this to make the table occupy the available screen height -->
 		<content>
-			<Table id="professorsTable">
+			<Table id="professorsTable" >
 				<columns>
 					<Column >
 						<Text text="Nombre"/>

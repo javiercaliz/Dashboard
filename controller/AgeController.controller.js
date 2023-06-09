@@ -33,29 +33,30 @@ sap.ui.define([
 					
 					switch (color) {
 						case "rgb(177, 205, 225)":
-							that.toProfessorsView();
+							that.toProfessorsView('>55');
 							break;
 						case "rgb(101, 152, 177)":
-							that.toProfessorsView();
+							that.toProfessorsView('46-55');
 							break;
-						case "rgb(16, 93, 151)":
-							that.toProfessorsView();
-							break;
-						case "rgb(25, 59, 106)":
-							that.toProfessorsView();
-							break;
-						case "rgb(18, 33, 73)":
-							that.toProfessorsView();
+							case "rgb(16, 93, 151)":
+								that.toProfessorsView('36-45');
+								break;
+								case "rgb(25, 59, 106)":
+									that.toProfessorsView('25-35');
+									break;
+									case "rgb(18, 33, 73)":
+							that.toProfessorsView('<25');
 							break;
 						default:
 							break;
-					}
+						}
+					});
 				});
-			});
-		},
-
-		clickOnStrokes: function (){
-			const pathElements = document.querySelectorAll("path");
+			},
+			
+			clickOnStrokes: function (){
+				const that = this;
+				const pathElements = document.querySelectorAll("path");
 			pathElements.forEach(function (pathElement) {
 				
 				pathElement.addEventListener("click", function () {
@@ -64,19 +65,19 @@ sap.ui.define([
 					
 					switch (strokeColor) {
 						case "rgba(177,205,225,0.85)":
-							alert('funcionaaaa 1');
+							that.toProfessorsView('>55');
 							break;
 						case "rgba(101,152,177,0.85)":
-							alert('funcionaaaa 2');
+							that.toProfessorsView('46-55');
 							break;
 						case "rgba(16,93,151,0.85)":
-							alert('funcionaaaa 3');
+							that.toProfessorsView('36-45');
 							break;
 						case "rgba(25,59,106,0.85)":
-							alert('funcionaaaa 4');
+							that.toProfessorsView('25-35');
 							break;
 						case "rgba(18,33,73,0.85)":
-							alert('funcionaaaa 5');
+							that.toProfessorsView('<25');
 							break;
 						default:
 							break;
@@ -198,11 +199,10 @@ sap.ui.define([
 		},
 
 		toProfessorsView : function (oParams) {
-			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			 var oParams = {"edad": "<25"}; 
-			  
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);		  
 			  // Navega a la misma vista con los nuevos parámetros de consulta
-			  oRouter.navTo("Professors", oParams, true); //REVISAR AGREGAR PARAMS EN ROUTES EN EL MANIFEST
+			  oRouter.navTo("Professors",oParams);
+			  window.location.href+='?age='+oParams; //REVISAR AGREGAR PARAMS EN ROUTES EN EL MANIFEST
 			
 		}
 

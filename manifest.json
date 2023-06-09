@@ -1,9 +1,19 @@
 {
 	"sap.app": {
-		"id": "sap.f.Dashboard",
+		"id": "Dashboard",
 		"applicationVersion": {
 			"version": "1.0.0"
-		}
+		},
+		"dataSources": {
+			"mainService": {
+			  
+			  "type": "OData",
+			  "settings": {
+				"odataVersion": "2.0",
+				"localUri": "mockdata/metadata.xml"
+			  }
+			}
+		  }
 	},
 	"sap.ui5": {
 		"rootView": {
@@ -77,7 +87,8 @@
 				"controller.BaseController.js",
 				"manifest.json",
 				"mockdata/departments.json",
-				"mockdata/profesors.json"
+				"mockdata/profesors.json",
+				"mockdata/metadata.xml"
 			]
 		},
 		"models": {
