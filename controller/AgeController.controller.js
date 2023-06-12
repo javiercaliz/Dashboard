@@ -81,11 +81,11 @@ sap.ui.define(
 
       segmentarEdades: async function () {
         const requestUrl = sap.ui.require.toUrl(
-          "sap/f/Dashboard/mockdata/profesors.json"
+          "sap/f/Dashboard/mockdata/professors.json"
         );
         const response = await fetch(requestUrl);
         const result = await response.json();
-        const profesores = result.profesors;
+        const profesores = result.professors;
 
         const edades = {
           "<25": 0,
@@ -203,7 +203,7 @@ sap.ui.define(
         var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
         // Navega a la misma vista con los nuevos parámetros de consulta
         oRouter.navTo("Professors", oParams);
-        window.location.href += "?age=" + oParams; //REVISAR AGREGAR PARAMS EN ROUTES EN EL MANIFEST
+        //window.location.href += "?age=" + oParams; //REVISAR AGREGAR PARAMS EN ROUTES EN EL MANIFEST
       },
     });
   }

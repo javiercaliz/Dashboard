@@ -22,10 +22,10 @@ sap.ui.define([
 
 
 		segmentarSemaforo: async function () {
-			const requestUrl = sap.ui.require.toUrl("sap/f/Dashboard/mockdata/profesors.json");
+			const requestUrl = sap.ui.require.toUrl("sap/f/Dashboard/mockdata/professors.json");
 			const response = await fetch(requestUrl);
 			const result = await response.json();
-			const profesores = result.profesors;
+			const profesores = result.professors;
 
 			const luces = {
 				"Amarillo": 0,

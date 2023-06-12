@@ -15,7 +15,7 @@
         <Property Name="nivel_ingles" Type="Edm.String"/>
       </EntityType>
       <EntityContainer Name="ProfesContainer" >
-        <EntitySet Name="Profesors" EntityType="sap.f.Dashboard.Profesor" />
+        <EntitySet Name="professors" EntityType="sap.f.Dashboard.Profesor" />
       </EntityContainer>
     </Schema>
   </edmx:DataServices>

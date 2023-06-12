@@ -17,7 +17,7 @@
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "sap.f.Dashboard.view.Professors",
+			"viewName": "sap.f.Dashboard.view.App",
 			"type": "XML",
 			"async": true
 		},
@@ -76,6 +76,7 @@
 				"Commitment.view.xml",
 				"PostGraduate.view.xml",
 				"TrafficLight.view.xml",
+				"FilterDialog.fragment.xml",
 				"controller.AppController.controller.js",
 				"controller.CommitmentController.controller.js",
 				"controller.PostGraduateController.controller.js",
@@ -87,15 +88,15 @@
 				"controller.BaseController.js",
 				"manifest.json",
 				"mockdata/departments.json",
-				"mockdata/profesors.json",
+				"mockdata/professors.json",
 				"mockdata/metadata.xml",
 				"mockdata/ProfessorsService.js"
 			]
 		},
 		"models": {
-			"profesors": {
+			"professors": {
 				"type": "sap.ui.model.json.JSONModel",
-				"uri": "mockdata/profesors.json"
+				"uri": "mockdata/professors.json"
 			}
 		},
 		"resources": {

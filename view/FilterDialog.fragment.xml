@@ -1,0 +1,71 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ViewSettingsDialog
+		confirm="handleFilterDialogConfirm">
+		<filterItems>
+			<ViewSettingsFilterItem
+				text="Edad"
+				key="edad"
+				multiSelect="false">
+				<items>
+					<ViewSettingsItem text="Menos de 25" key="edad___LT___25" />
+					<ViewSettingsItem text="Entre 25 y 35" key="edad___BT___25___35" />
+					<ViewSettingsItem text="Entre 36 y 45" key="edad___BT___36___45" />
+					<ViewSettingsItem text="Entre 46 y 55" key="edad___BT___46___55" />
+					<ViewSettingsItem text="Más de 55" key="edad___GT___55" />
+				</items>
+			</ViewSettingsFilterItem>
+			<ViewSettingsFilterItem
+				text="Compromiso de Desempeño"
+				key="compromiso_desempeno"
+				multiSelect="false">
+				<items>
+					<ViewSettingsItem text="Nivel 1" key="compromiso_desempeno___LE___1" />
+					<ViewSettingsItem text="Nivel 2" key="compromiso_desempeno___LE___2" />
+					<ViewSettingsItem text="Nivel 3" key="compromiso_desempeno___LE___3" />
+					<ViewSettingsItem text="Nivel 4" key="compromiso_desempeno___LE___4" />
+					<ViewSettingsItem text="Nivel 5" key="compromiso_desempeno___LE___5" />
+				</items>
+			</ViewSettingsFilterItem>
+			<ViewSettingsFilterItem
+				text="Posgrados"
+				key="posgrados"
+				multiSelect="false">
+				<items>
+					<ViewSettingsItem text="Entre 0 y 4" key="posgrados___BT___0___4" />
+					<ViewSettingsItem text="Entre 5 y 9" key="posgrados___BT___5___9" />
+					<ViewSettingsItem text="Entre 10 y 14" key="posgrados___BT___10___14" />
+					<ViewSettingsItem text="Entre 15 y 20" key="posgrados___GT___15" />
+				</items>
+			</ViewSettingsFilterItem>
+			<ViewSettingsFilterItem
+				text="Semáforo"
+				key="semaforo"
+				multiSelect="false">
+				<items>
+					<ViewSettingsItem text="Rojo" key="semaforo___LE___Rojo" />
+					<ViewSettingsItem text="Amarillo" key="semaforo___LE___Amarillo" />
+					<ViewSettingsItem text="Verde" key="semaforo___LE___Verde" />
+					<ViewSettingsItem text="Azul" key="semaforo___LE___Azul" />
+					<ViewSettingsItem text="Gris" key="semaforo___LE___Gris" />
+				</items>
+			</ViewSettingsFilterItem>
+			<ViewSettingsFilterItem
+				text="Nivel de Inglés"
+				key="nivel_ingles"
+				multiSelect="false">
+				<items>
+					<ViewSettingsItem text="A1" key="nivel_ingles___LE___A1" />
+					<ViewSettingsItem text="A2" key="nivel_ingles___LE___A2" />
+					<ViewSettingsItem text="B1" key="nivel_ingles___LE___B1" />
+					<ViewSettingsItem text="B2" key="nivel_ingles___LE___B2" />
+					<ViewSettingsItem text="C1" key="nivel_ingles___LE___C1" />
+					<ViewSettingsItem text="C2" key="nivel_ingles___LE___C2" />
+					<ViewSettingsItem text="Sin Info" key="nivel_ingles___LE___sin info" />
+				</items>
+			</ViewSettingsFilterItem>
+			
+		</filterItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

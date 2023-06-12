@@ -8,7 +8,7 @@
     height="100%"
 >
     <Page
-        title="Profesores"
+        title="Tecnológico De Monterrey"
         showNavButton="true"
         navButtonPress="onNavBack"
         navButtonTooltip="Back"
@@ -17,15 +17,19 @@
         <content>
             <Table
                 id="professorsTable"
+                inset="false"
+                alternateRowColors="true"
                 items="{
-			path: '/profesors',
+			path: '/professors',
 			sorter: {
 				path: 'nombre'
 			}}"
+            headerText="Profesores"
             >
                 <headerToolbar>
                     <OverflowToolbar>
-                        <ToolbarSpacer />
+                        	<Title text="Profesores" level="H2"/>
+				<ToolbarSpacer/>
                         <!-- Add the Grouping checkbox -->
                         <!-- <CheckBox text="Enable Personalization Grouping" select="onTableGrouping" /> -->
                         <Button visible="false" />
@@ -87,11 +91,11 @@
                         <cells>
                             <Text text="{nombre}" />
                             <Text text="{apellido}" />
-							<Text text="{edad}" />
-							<Text text="{compromiso_desempeno}" />
-							<Text text="{posgrados}" />
-							<Text text="{semaforo}" />
-							<Text text="{nivel_ingles}" />
+                            <Text text="{edad}" />
+                            <Text text="{compromiso_desempeno}" />
+                            <Text text="{posgrados}" />
+                            <Text text="{semaforo}" />
+                            <Text text="{nivel_ingles}" />
                         </cells>
                     </ColumnListItem>
                 </items>
