@@ -21,16 +21,13 @@ sap.ui.define([
 			var oRouter = this.getOwnerComponent().getRouter();
 			oRouter.getRoute("Professors").attachMatched(this._onRouteMatched, this);
 			
-			this.createTable();
-
-			var oModel = new JSONModel(sap.ui.require.toUrl("sap/f/Dashboard/mockdata/profesors.json"));
+			var oModel = new JSONModel(sap.ui.require.toUrl("sap/f/Dashboard/mockdata/profesors.json"), "profesors");
 			var oGroupingModel = new JSONModel({ hasGrouping: false});
 			this.getView().setModel(oModel);
 			this.getView().setModel(oGroupingModel, 'Grouping');
 
 			this._oTPC = new TablePersoController({
 				table: this.byId("professorsTable"),
-				//specify the first part of persistence ids e.g. 'demoApp-productsTable-dimensionsCol'
 				componentName: "Dashboard",
 				resetAllMode: ResetAllMode.ServiceReset,
 				persoService: ProfessorsService
@@ -39,30 +36,6 @@ sap.ui.define([
 
 		onAfterRendering: async function () {
 			this.filtros();
-			
-		},
-
-
-		createTable: async function(){
-			var oTable = this.getView().byId("professorsTable");
-			var oSorter = new Sorter("profesors>nombre", false);
-			var oTemplate = new sap.m.ColumnListItem({
-				cells: [
-					new sap.m.Text({text: "{profesors>nombre}"}),
-					new sap.m.Text({text: "{profesors>apellido}"}),
-					new sap.m.Text({text: "{profesors>edad}"}),
-					new sap.m.Text({text: "{profesors>compromiso_desempeno}"}),
-					new sap.m.Text({text: "{profesors>posgrados}"}),
-					new sap.m.Text({text: "{profesors>semaforo}"}),
-					new sap.m.Text({text: "{profesors>nivel_ingles}"})
-				]
-			});
-
-			oTable.bindItems({
-				path: "profesors>/profesors",
-				template: oTemplate,
-				sorter: oSorter,
-			});
 			
 		},
 

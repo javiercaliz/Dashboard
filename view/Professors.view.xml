@@ -1,61 +1,101 @@
 <mvc:View
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
-	xmlns:smartTable="sap.ui.comp.smarttable"
-	xmlns:html="http://www.w3.org/1999/xhtml"
-	controllerName="sap.f.Dashboard.controller.ProfessorsController"
-	height="100%">
-
-	<Page
-		title="Profesores"
-		showNavButton="true"
-		navButtonPress="onNavBack"
-		navButtonTooltip="Back">
-
-		<!-- use this to make the table occupy the available screen height -->
-		<content>
-			<Table id="professorsTable" >
-			<headerToolbar>
-			<OverflowToolbar>
-				
-				<ToolbarSpacer/>
-				<!-- Add the Grouping checkbox -->
-				<!-- <CheckBox text="Enable Personalization Grouping" select="onTableGrouping" /> -->
-				<!-- Add the Personalization button -->
-				<Button icon="sap-icon://action-settings" press="onPersoButtonPressed" class="sapUiSmallMargin" id="btn1">
-					<layoutData>
-						<OverflowToolbarLayoutData priority="NeverOverflow" />
-					</layoutData>
-				</Button>
-					<Button	icon="sap-icon://download" press="onDataExport" id="btn2"/>
-			</OverflowToolbar>
-		</headerToolbar>
-				<columns>
-					<Column id="nombre">
-						<Text text="Nombre"/>
-					</Column>
-					<Column id="apellido">
-						<Text text="Apellido"/>
-					</Column>
-					<Column id="edad">
-						<Text text="Edad"/>
-					</Column>
-					<Column id="compromiso_desempeno">
-						<Text text="Compromiso de Desempeno"/>
-					</Column>
-					<Column id="cantidad_posgrados">
-						<Text text="Cantidad de Posgrados"/>
-					</Column>
-					<Column id="semaforo">
-						<Text text="Semáforo"/>
-					</Column>
-					<Column id="nivel_ingles">
-						<Text text="Nivel de Inglés"/>
-					</Column>
-				</columns>
-			</Table>
-		</content>
-
-	</Page>
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    controllerName="sap.f.Dashboard.controller.ProfessorsController"
+    height="100%"
+>
+    <Page
+        title="Profesores"
+        showNavButton="true"
+        navButtonPress="onNavBack"
+        navButtonTooltip="Back"
+    >
+        <!-- use this to make the table occupy the available screen height -->
+        <content>
+            <Table
+                id="professorsTable"
+                items="{
+			path: '/profesors',
+			sorter: {
+				path: 'nombre'
+			}}"
+            >
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <ToolbarSpacer />
+                        <!-- Add the Grouping checkbox -->
+                        <!-- <CheckBox text="Enable Personalization Grouping" select="onTableGrouping" /> -->
+                        <Button visible="false" />
+                        <Button
+                            tooltip="Filter"
+                            icon="sap-icon://filter"
+                            press="handleFilterButtonPressed"
+                            class="sapUiSmallMargin"
+                            text="Filtrar"
+                        />
+                        <!-- Add the Personalization button -->
+                        <Button
+                            icon="sap-icon://action-settings"
+                            press="onPersoButtonPressed"
+                            class="sapUiSmallMargin"
+                            id="btn1"
+                            text="Personalizar"
+                        >
+                            <layoutData>
+                                <OverflowToolbarLayoutData
+                                    priority="NeverOverflow"
+                                />
+                            </layoutData>
+                        </Button>
+                        <Button
+                            icon="sap-icon://download"
+                            press="onDataExport"
+                            id="btn2"
+                            class="sapUiSmallMargin"
+                            text="Descargar"
+                        />
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column id="nombre">
+                        <Text text="Nombre" />
+                    </Column>
+                    <Column id="apellido">
+                        <Text text="Apellido" />
+                    </Column>
+                    <Column id="edad">
+                        <Text text="Edad" />
+                    </Column>
+                    <Column id="compromiso_desempeno">
+                        <Text text="Compromiso de Desempeno" />
+                    </Column>
+                    <Column id="cantidad_posgrados">
+                        <Text text="Cantidad de Posgrados" />
+                    </Column>
+                    <Column id="semaforo">
+                        <Text text="Semáforo" />
+                    </Column>
+                    <Column id="nivel_ingles">
+                        <Text text="Nivel de Inglés" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem vAlign="Middle">
+                        <cells>
+                            <Text text="{nombre}" />
+                            <Text text="{apellido}" />
+							<Text text="{edad}" />
+							<Text text="{compromiso_desempeno}" />
+							<Text text="{posgrados}" />
+							<Text text="{semaforo}" />
+							<Text text="{nivel_ingles}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
 </mvc:View>
