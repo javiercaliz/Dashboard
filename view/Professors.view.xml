@@ -8,7 +8,7 @@
 	height="100%">
 
 	<Page
-		title="Professors"
+		title="Profesores"
 		showNavButton="true"
 		navButtonPress="onNavBack"
 		navButtonTooltip="Back">
@@ -16,26 +16,41 @@
 		<!-- use this to make the table occupy the available screen height -->
 		<content>
 			<Table id="professorsTable" >
+			<headerToolbar>
+			<OverflowToolbar>
+				
+				<ToolbarSpacer/>
+				<!-- Add the Grouping checkbox -->
+				<!-- <CheckBox text="Enable Personalization Grouping" select="onTableGrouping" /> -->
+				<!-- Add the Personalization button -->
+				<Button icon="sap-icon://action-settings" press="onPersoButtonPressed" class="sapUiSmallMargin" id="btn1">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+					<Button	icon="sap-icon://download" press="onDataExport" id="btn2"/>
+			</OverflowToolbar>
+		</headerToolbar>
 				<columns>
-					<Column >
+					<Column id="nombre">
 						<Text text="Nombre"/>
 					</Column>
-					<Column >
+					<Column id="apellido">
 						<Text text="Apellido"/>
 					</Column>
-					<Column >
+					<Column id="edad">
 						<Text text="Edad"/>
 					</Column>
-					<Column >
+					<Column id="compromiso_desempeno">
 						<Text text="Compromiso de Desempeno"/>
 					</Column>
-					<Column >
+					<Column id="cantidad_posgrados">
 						<Text text="Cantidad de Posgrados"/>
 					</Column>
-					<Column >
+					<Column id="semaforo">
 						<Text text="Semáforo"/>
 					</Column>
-					<Column >
+					<Column id="nivel_ingles">
 						<Text text="Nivel de Inglés"/>
 					</Column>
 				</columns>

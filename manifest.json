@@ -17,7 +17,7 @@
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "sap.f.Dashboard.view.App",
+			"viewName": "sap.f.Dashboard.view.Professors",
 			"type": "XML",
 			"async": true
 		},
@@ -88,7 +88,8 @@
 				"manifest.json",
 				"mockdata/departments.json",
 				"mockdata/profesors.json",
-				"mockdata/metadata.xml"
+				"mockdata/metadata.xml",
+				"mockdata/ProfessorsService.js"
 			]
 		},
 		"models": {

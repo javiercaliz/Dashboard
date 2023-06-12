@@ -327,3 +327,8 @@ html.sap-desktop .sapMShellAppWidthLimited .sapMShellCentralBox {
     justify-content: center;
     font-weight: bold !important;
 }
+
+.tableBtn{
+    width: fit-content;
+    margin-right: 75px !important;
+}
