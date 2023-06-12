@@ -103,11 +103,7 @@ sap.ui.define([
 		},
 
 		onNavBack: function () {
-			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			var oParams = {};
-			  
-			  // Navega a la misma vista con los nuevos parámetros de consulta
-			  oRouter.navTo("MasterView", true);
+			window.location = 'http://127.0.0.1:5500/'
 		}
 
 	});
