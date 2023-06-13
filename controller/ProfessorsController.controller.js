@@ -14,7 +14,18 @@ sap.ui.define(
     "sap/f/Dashboard/mockdata/ProfessorsService",
   ],
   function (
-    Controller, Fragment, Export, ExportTypeCSV, JSONModel, Filter, Sorter, Device, mlibrary, MessageToast, TablePersoController, ProfessorsService
+    Controller,
+    Fragment,
+    Export,
+    ExportTypeCSV,
+    JSONModel,
+    Filter,
+    Sorter,
+    Device,
+    mlibrary,
+    MessageToast,
+    TablePersoController,
+    ProfessorsService
   ) {
     "use strict";
 
@@ -46,71 +57,74 @@ sap.ui.define(
           }).activate();
         },
 
-        onAfterRendering: async function () {
-          this.filtros();
+        onAfterRendering: function () {
+          this.filtros("<25");
         },
 
         filtros: function () {
-          var oTable = this.getView().byId("professorsTable");
-          //obten en una variable la url actual
-          var url = window.location.href;
-
-          if (url.includes("age=%3E55")) {
-            for (var i = 0; i < oTable.getItems().length; i++) {
-              if (oTable.getItems()[i].getCells()[2].getText() < 55) {
-                oTable.getItems()[i].setVisible(false);
-              }
-            }
+          //Obtener el parámetro de la url
+          const url = window.location.href;
+          const age = url.split("=")[1];
+          // Crear el filtro
+          var oTable = this.byId("professorsTable");
+          var oBinding = oTable.getBinding("items");
+          var oFilter;
+          switch (age) {
+            case "%3C25":
+              oFilter = new sap.ui.model.Filter(
+                "edad",
+                sap.ui.model.FilterOperator.BT,
+                "0",
+                "24"
+              );
+              break;
+            case "25-35":
+              oFilter = new sap.ui.model.Filter(
+                "edad",
+                sap.ui.model.FilterOperator.BT,
+                "25",
+                "35"
+              );
+              break;
+            case "36-45":
+              oFilter = new sap.ui.model.Filter(
+                "edad",
+                sap.ui.model.FilterOperator.BT,
+                "36",
+                "45"
+              );
+              break;
+            case "46-55":
+              oFilter = new sap.ui.model.Filter(
+                "edad",
+                sap.ui.model.FilterOperator.BT,
+                "46",
+                "55"
+              );
+              break;
+            case "%3E55":
+              oFilter = new sap.ui.model.Filter(
+                "edad",
+                sap.ui.model.FilterOperator.BT,
+                "56",
+                "120"
+              );
+              break;
+            default:
+              break;
           }
-
-          if (url.includes("46-55")) {
-            for (var i = 0; i < oTable.getItems().length; i++) {
-              if (
-                oTable.getItems()[i].getCells()[2].getText() > 55 ||
-                oTable.getItems()[i].getCells()[2].getText() < 46
-              ) {
-                oTable.getItems()[i].setVisible(false);
-              }
-            }
-          }
-          if (url.includes("36-45")) {
-            for (var i = 0; i < oTable.getItems().length; i++) {
-              if (
-                oTable.getItems()[i].getCells()[2].getText() > 45 ||
-                oTable.getItems()[i].getCells()[2].getText() < 36
-              ) {
-                oTable.getItems()[i].setVisible(false);
-              }
-            }
-          }
-          if (url.includes("25-35")) {
-            for (var i = 0; i < oTable.getItems().length; i++) {
-              if (
-                oTable.getItems()[i].getCells()[2].getText() > 35 ||
-                oTable.getItems()[i].getCells()[2].getText() < 25
-              ) {
-                oTable.getItems()[i].setVisible(false);
-              }
-            }
-          }
-          if (url.includes("age=%3C25")) {
-            for (var i = 0; i < oTable.getItems().length; i++) {
-              if (oTable.getItems()[i].getCells()[2].getText() > 25) {
-                oTable.getItems()[i].setVisible(false);
-              }
-            }
-          }
+          oBinding.filter([oFilter]);
         },
 
-        _onRouteMatched: function (oEvent) {
+        _onRouteMatched: function (oEvent) { console.log(oEvent);
           var oParameters = oEvent.getParameter("arguments");
           var sEdad = oParameters.edad; // Aquí obtienes el valor del parámetro "id"
           // Realiza las operaciones necesarias con el parámetro recibido
         },
-        /* 
-		onToView2 : function () {
-			this.getOwnerComponent().getTargets().display("Professors");
-		}, */
+
+        onToView2: function () {
+          this.getOwnerComponent().getTargets().display("Professors");
+        },
 
         onNavBack: function () {
           window.location = "http://10.10.3.93:5500/";

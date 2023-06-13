@@ -203,8 +203,17 @@ sap.ui.define(
         var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
         // Navega a la misma vista con los nuevos parámetros de consulta
         oRouter.navTo("Professors", oParams);
-        //window.location.href += "?age=" + oParams; //REVISAR AGREGAR PARAMS EN ROUTES EN EL MANIFEST
+        window.location.href += "?age=" + oParams; //REVISAR AGREGAR PARAMS EN ROUTES EN EL MANIFEST 
       },
+
+      
+
+
+
+
     });
   }
 );
+
+
+
